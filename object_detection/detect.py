@@ -22,6 +22,7 @@ from tflite_support.task import processor
 from tflite_support.task import vision
 import utils
 
+from smart_fridge_request import send_detection_result
 
 def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
         enable_edgetpu: bool) -> None:
@@ -63,7 +64,8 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   detector = vision.ObjectDetector.create_from_options(options)
 
   # Continuously capture images from the camera and run inference
-  while cap.isOpened():
+  while True:
+    print("running")
     success, image = cap.read()
     if not success:
       sys.exit(
@@ -83,7 +85,10 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
     detection_result = detector.detect(input_tensor)
 
     # Draw keypoints and edges on input image
-    image = utils.visualize(image, detection_result)
+    image, names = utils.visualize(image, detection_result)
+    status_code = send_detection_result(names)
+    print(status_code)
+    time.sleep(5)
 
     # Calculate the FPS
     if counter % fps_avg_frame_count == 0:
