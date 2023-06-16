@@ -1,25 +1,28 @@
 # AIoT Smart Fridge System
+Smart Fridge monitors your fridge, alerts you when food is about to expire, or when someone steals your food. 
+In addition, it can generate recipe based on items in fridge with the help of ChatGPT.
 
-## Introduction
-Smart Fridge comes with food recognition, expiration alert, face detection, and a web UI to monitor fridge state, visualize items in fridge, and generate recipe with ChatGPT.
-<div style="margin-top: 16px; margin-inline: auto; display: grid; grid-template-columns: repeat(2, 1fr); row-gap: 16px; max-width: 700px;">
-  <div style="max-height: 700px">
-    <div style="padding: 2px 5px; background: rgba(255,255,255,0.5); color: black; border-radius: 8px; width: fit-content;">Home page</div>
-    <img src="./images/1-home.png" />
-  </div>
-  <div style="max-height: 700px">
-    <div style="padding: 2px 5px; background: rgba(255,255,255,0.5); color: black; border-radius: 8px; width: fit-content;">Expiration date</div>
-    <img src="./images/2-expiration-date.png" />
-  </div>
-  <div style="max-height: 700px">
-    <div style="padding: 2px 5px; background: rgba(255,255,255,0.5); color: black; border-radius: 8px; width: fit-content;">Stolen items</div>
-    <img src="./images/3-stolen.png" />
-  </div>
-  <div style="max-height: 700px">
-    <div style="padding: 2px 5px; background: rgba(255,255,255,0.5); color: black; border-radius: 8px; width: fit-content;">ChatGPT recipe</div>
-    <img src="./images/4-gpt-recipe.png" />
-  </div>
-</div>
+## Features
+- Temperature and Humidity Sensor
+  - monitor fridge temperature and humidity
+- Food recognition
+  - detect food items in fridge
+- Expiration alert
+  - alert user when food is about to expire
+- Food Protection
+  - face detection to identify the person opening the fridge
+- Recipe with ChatGPT
+  - generate recipe based on items in fridge
+- Web UI
+  - monitor fridge state
+  - visualize items in fridge
+  - alert when someone steals your food
+  - alert when food is about to expire
+  - generate recipe with ChatGPT
+
+
+![](./images/overview-1.png)
+![](./images/overview-2.png)
 
 ## Hardware
 - Raspberry Pi 4B x3
